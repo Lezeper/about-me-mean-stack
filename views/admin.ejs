@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html ng-app="admin">
+<head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+</head>
+<body ng-controller="myController as myCtrl">
+<div class="container">
+    <h1>{{myCtrl.title}}</h1>
+    <ul>
+        <h2>Projects</h2>
+        <li ng-repeat="project in projects">
+            <form class="form-horizontal" novalidate>
+                <div class="control-group">
+                    <label for="url">Project Name: </label>
+                    <div class="controls">
+                        <input type="text" value="{{project.name}}" ng-model="project.name">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="url">Description: </label>
+                    <div class="controls">
+                        <input type="text" value="{{project.description}}" ng-model="project.description">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="url">Link: </label>
+                    <div class="controls">
+                        <input type="text" value="{{project.link}}" ng-model="project.link">
+                    </div>
+                </div>
+                <br>
+                <button class="btn btn-default" ng-click="updateProject(project)">Update</button>
+                <button class="btn btn-default" ng-click="deleteProject(project._id)">Delete</button>
+            </form>
+        </li>
+    </ul>
+
+    <hr>
+    <form novalidate class="form-horizontal">
+        <div class="control-group">
+            <label for="projectName">Project Name: </label>
+            <div class="controls">
+                <input type="text" ng-model="newProject.name">
+            </div>
+        </div>
+        <div class="control-group">
+            <label for="description">Description: </label>
+            <div class="controls">
+                <input type="text" ng-model="newProject.description">
+            </div>
+        </div>
+        <div class="control-group">
+            <label for="link">link: </label>
+            <div class="controls">
+                <input type="text" ng-model="newProject.link">
+            </div>
+        </div>
+        <br>
+        <button ng-click="createProject()" class="btn btn-default">Add</button>
+    </form>
+    <br>
+</div>
+
+<script src="javascripts/jquery-1.12.3.min.js"></script>
+<script src="javascripts/angular.min.js"></script>
+<script src="javascripts/bootstrap.min.js"></script>
+<script src="javascripts/app.js"></script>
+</body>
+<footer class="panel-footer" style="text-align: center">
+    <h6>Copyright <%= year %> Ma Lewis. All rights reserved.</h6>
+</footer>
+</html>

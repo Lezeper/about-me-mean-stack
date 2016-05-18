@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="stylesheets/style.css"/>
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheets/font-awesome.min.css">
+    <link rel="stylesheet" href="stylesheets/main.css">
+</head>
+<body ng-controller="myController as myCtrl">
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div id="photo-header" class="text-center">
+                <div id="photo">
+                    <img src="images/avatar.png" alt="avatar">
+                </div>
+                <div id="text-header">
+                    <h1>Yuhao Ma</h1>
+                    <h5 id="portfolio">Introduction</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-7">
+            <!-- Works -->
+            <div class="box">
+                <h2>Project</h2>
+                <div class="list-group" style="max-width: 500px;" ng-repeat="project in projects">
+                    <a href="{{project.link}}" class="list-group-item">
+                        <h4 class="list-group-item-heading">{{project.name}}</h4>
+                        <p class="list-group-item-text">{{project.description}}</p>
+                    </a>
+                </div>
+            </div>
+            <!-- EDUCATION -->
+            <div class="box">
+                <h2>Education</h2>
+                <ul id="education" class="clearfix">
+                    <li>
+                        <div class="year pull-left">2011</div>
+                        <div class="description pull-right">
+                            <h3>Concord University College Fujian Normal University, China</h3>
+                            <p> Pursuing International Finance major.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="year pull-left">2014</div>
+                        <div class="description pull-right">
+                            <h3>The State University of New York at Albany, United States</h3>
+                            <p>Pursuing Computer Science major with Math minor.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="year pull-left">2016</div>
+                        <div class="description pull-right">
+                            <h3>Completed Bachelor Degree of Computer Science</h3>
+                            <p>Graduated from SUNY Albany, USA</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="box">
+                <h2>Experiences</h2>
+                <div class="job clearfix">
+                    <div class="col-xs-3">
+                        <div class="where">Dec,2015 - Jan,2016</div>
+                        <div class="year"></div>
+                    </div>
+                    <div class="col-xs-9">
+                        <div class="profession">Experience 1</div>
+                        <div class="description">
+                            Briefly introduction.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!------ Right Side ----->
+        <div class="col-xs-12 col-sm-5">
+            <!-- SKILLS -->
+            <div class="box">
+                <div style="height: 50px">
+                    <h2>Skills</h2>
+                    <h4>
+                        <span class="label label-success">J2EE</span>
+                        <span class="label label-success">Full Stack</span>
+                        <span class="label label-success">Stock Trader</span>
+                        <span class="label label-success">Instrument Performance</span>
+                    </h4>
+                </div>
+            </div>
+            <!-- LANGUAGES -->
+            <div class="box">
+                <h2>Languages</h2>
+                <div id="language-skills">
+                    <div class="skill">Mandarin
+                        <div class="icons pull-right">
+                            <div style="width: 100%;" class="icons-red"></div>
+                        </div>
+                    </div>
+                    <div class="skill">English
+                        <div class="icons pull-right">
+                            <div style="width: 80%;" class="icons-red"></div>
+                        </div>
+                    </div>
+                    <div class="skill">Japanese
+                        <div class="icons pull-right">
+                            <div style="width: 80%;" class="icons-red"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- HOBBIES -->
+            <div class="box">
+                <h2>Hobbies</h2>
+                <div class="hobby">Programming</div>
+                <div class="hobby">Playing Instruments</div>
+                <div class="hobby">Finance and Investment</div>
+                <div class="hobby">Japanese Anime and Novels</div>
+                <div class="hobby">DIYs</div>
+            </div>
+            <!-- CONTACT -->
+            <div class="box clearfix">
+                <h2>Contact</h2>
+                <div class="contact-item">
+                    <a href="mailto:mark.yhm@gmail.com">
+                        <div class="icon pull-left text-center"><span class="fa fa-envelope fa-fw"></span></div>
+                        <div class="title pull-right">Email</div>
+                        <div class="description pull-right">mark.yhm@gmail.com</div>
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <a href="https://github.com/Lezeper">
+                        <div class="icon pull-left text-center"><span class="fa fa-github fa-fw"></span></div>
+                        <div class="title pull-right">GitHub</div>
+                        <div class="description pull-right">https://github.com/Lezeper</div>
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <a href="https://twitter.com/imlewis15">
+                        <div class="icon pull-left text-center"><span class="fa fa-twitter fa-fw"></span></div>
+                        <div class="title pull-right">Twitter</div>
+                        <div class="description pull-right">https://twitter.com/imlewis15</div>
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <a href="http://blog.imlewis.com">
+                        <div class="icon pull-left text-center"><span class="fa fa-wordpress fa-fw"></span></div>
+                        <div class="title pull-right">Blog</div>
+                        <div class="description pull-right">blog.imlewis.com</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="panel-footer" style="text-align: center">
+    <h6>Copyright <%= year %> Ma Lewis. All rights reserved.</h6>
+</footer>
+</body>
+<script src="javascripts/jquery-1.12.3.min.js"></script>
+<script src="javascripts/angular.min.js"></script>
+<script src="javascripts/bootstrap.min.js"></script>
+<script src="javascripts/app.js"></script>
+<script src="javascripts/scripts.js"></script>
+</html>
